@@ -49,7 +49,7 @@ public class myPanel extends JPanel {
            dots.add(d);
            repaint();
        }
-
+       //
        @Override
        public void mousePressed(MouseEvent e) {
            for (Dot d : dots) {
