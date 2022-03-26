@@ -25,6 +25,10 @@ public class Dot {
         this.center = center;
     }
 
+    public Point getCenter() {
+        return center;
+    }
+
     public void setColor(Color color) {
         this.color = color;
     }
@@ -35,4 +39,5 @@ public class Dot {
     public int getY(){
         return (int) center.getY();
     }
+
 }

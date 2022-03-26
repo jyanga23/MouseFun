@@ -52,9 +52,18 @@ public class myPanel extends JPanel {
 
        @Override
        public void mousePressed(MouseEvent e) {
-           d = new Dot(e.getPoint());
-           d.setColor(Color.RED);
-           repaint();
+           for (Dot d : dots) {
+               double dist = Math.pow((e.getX() - d.getX()) + (e.getY() - d.getY()), 2);
+               if (dist < d.getRadius()) {
+                   dots.remove(d);
+                   d.setCenter(e.getPoint());
+                   repaint();
+               } else {
+                   d = new Dot(e.getPoint());
+                   d.setColor(Color.RED);
+                   repaint();
+               }
+           }
        }
 
        @Override
